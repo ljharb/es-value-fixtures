@@ -1,6 +1,6 @@
 {
 	"name": "es-value-fixtures",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Fixtures of ES values, for testing purposes",
 	"main": "index.js",
 	"exports": {
