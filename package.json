@@ -1,0 +1,38 @@
+{
+	"name": "es-value-fixtures",
+	"version": "0.0.0",
+	"description": "Fixtures of ES values, for testing purposes",
+	"main": "index.js",
+	"exports": {
+		".": [
+			{
+				"default": "./index.js"
+			},
+			"./index.js"
+		]
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ljharb/es-value-fixtures.git"
+	},
+	"keywords": [
+		"javascript",
+		"ecmascript",
+		"es",
+		"js",
+		"values",
+		"value",
+		"fixture",
+		"fixtures",
+		"es-abstract"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/es-value-fixtures/issues"
+	},
+	"homepage": "https://github.com/ljharb/es-value-fixtures#readme"
+}
