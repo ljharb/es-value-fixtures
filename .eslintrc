@@ -2,4 +2,12 @@
 	"root": true,
 
 	"extends": "@ljharb",
+
+	"rules": {
+		"array-bracket-newline": 0,
+		"id-length": 0,
+		"max-statements-per-line": 0,
+		"no-magic-numbers": 0,
+		"sort-keys": 0,
+	},
 }
