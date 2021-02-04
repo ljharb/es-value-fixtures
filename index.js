@@ -82,6 +82,7 @@ module.exports = {
 	int32s: int32s,
 	integerNumbers: integerNumbers,
 	nonArrays: nonArrays,
+	bigints: bigints,
 	nonBigInts: nonBigInts,
 	nonBooleans: nonBooleans,
 	nonFunctions: nonFunctions,
