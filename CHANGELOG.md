@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0](https://github.com/ljharb/es-value-fixtures/compare/v1.0.0...v1.1.0) - 2021-02-04
+
+### Commits
+
+- [Tests] migrate to github actions; run `nyc` on all tests [`b01abdb`](https://github.com/ljharb/es-value-fixtures/commit/b01abdb8b1242f294764cdeb73f682607f73b6eb)
+- [meta] do not publish github action workflow files [`b296cff`](https://github.com/ljharb/es-value-fixtures/commit/b296cff5e3fa392438aebb5513c7015c8259643d)
+- [actions] remove misplaced workflow files [`d898f7d`](https://github.com/ljharb/es-value-fixtures/commit/d898f7dc26297b34145a5531c0b80150b8d2f066)
+- [meta] add Automatic Rebase and Require Allow Edits workflows [`991dd63`](https://github.com/ljharb/es-value-fixtures/commit/991dd6347bd0a5c78e0ce30e7ca51a38363375b5)
+- [New] add `int32s`, `arrowFunctions`, `generatorFunctions`, `asyncFunctions`, `nonConstructorFunctions`, `notNonNegativeIntegers` [`2f8b24a`](https://github.com/ljharb/es-value-fixtures/commit/2f8b24a36bfa6a9ff7c3091bcc62240b62c97d3c)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `tape` [`22181ab`](https://github.com/ljharb/es-value-fixtures/commit/22181ab5b402011bc466c819fc72f58a2ff8504d)
+- [Deps] update `has-bigints`, `object.assign` [`9ba0056`](https://github.com/ljharb/es-value-fixtures/commit/9ba0056338ac4892ec4492ad2522401a9927039f)
+- [patch] expose `package.json` in `exports` [`cda9dff`](https://github.com/ljharb/es-value-fixtures/commit/cda9dff3ad41225194991a4439ea801f4ea6bfc0)
+- [meta] fix FUNDING.yml [`6678bbd`](https://github.com/ljharb/es-value-fixtures/commit/6678bbd367b028929fdea8a38baf067643687849)
+
 ## v1.0.0 - 2020-10-29
 
 ### Commits
