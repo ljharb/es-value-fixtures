@@ -4,6 +4,9 @@ var assign = require('object.assign');
 
 var hasSymbols = require('has-symbols')();
 var hasBigInts = require('has-bigints')();
+var arrowFunctions = require('make-arrow-function').list();
+var generatorFunctions = require('make-generator-function')();
+var asyncFunctions = require('make-async-function').list();
 
 var coercibleObject = { valueOf: function () { return 3; }, toString: function () { return 42; } };
 var coercibleFnObject = {
@@ -20,7 +23,8 @@ var uncoercibleFnObject = {
 var objects = [{}, coercibleObject, coercibleFnObject, toStringOnlyObject, valueOfOnlyObject];
 var nullPrimitives = [undefined, null];
 var nonIntegerNumbers = [-1.3, 0.2, 1.8, 1 / 3];
-var integerNumbers = [1, 7, 42, 1e17];
+var int32s = [1, 7, 42];
+var integerNumbers = int32s.concat([1e17]);
 var zeroes = [0, -0];
 var infinities = [Infinity, -Infinity];
 var numbers = zeroes.concat([42], infinities, nonIntegerNumbers);
@@ -43,6 +47,9 @@ var timestamps = [].concat(0, 946713600000, 1546329600000);
 var nonFunctions = [].concat(primitives, objects, [42]);
 var nonArrays = [].concat(nonFunctions);
 var nonBigInts = [].concat(nonNumberPrimitives, numbers);
+var nonConstructorFunctions = [].concat(arrowFunctions, generatorFunctions, asyncFunctions);
+var nonNumbers = nonNumberPrimitives.concat(objects);
+var notNonNegativeIntegers = nonNumbers.concat(nonIntegerNumbers, NaN, infinities, [-1, -7, -42, -1e17]);
 
 var descriptors = {
 	configurable: function (descriptor) {
@@ -72,15 +79,21 @@ module.exports = {
 	falsies: falsies,
 	hasSymbols: hasSymbols,
 	infinities: infinities,
+	int32s: int32s,
 	integerNumbers: integerNumbers,
 	nonArrays: nonArrays,
 	nonBigInts: nonBigInts,
 	nonBooleans: nonBooleans,
 	nonFunctions: nonFunctions,
+	arrowFunctions: arrowFunctions,
+	generatorFunctions: generatorFunctions,
+	asyncFunctions: asyncFunctions,
+	nonConstructorFunctions: nonConstructorFunctions,
 	nonIntegerNumbers: nonIntegerNumbers,
+	notNonNegativeIntegers: notNonNegativeIntegers,
 	nonNullPrimitives: nonNullPrimitives,
 	nonNumberPrimitives: nonNumberPrimitives,
-	nonNumbers: nonNumberPrimitives.concat(objects),
+	nonNumbers: nonNumbers,
 	nonPropertyKeys: nonPropertyKeys,
 	nonStrings: nonStrings,
 	nonSymbolPrimitives: nonSymbolPrimitives,

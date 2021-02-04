@@ -53,6 +53,9 @@
 		"eslint": "^7.12.1",
 		"foreach": "^2.0.5",
 		"isarray": "^2.0.5",
+		"make-arrow-function": "^1.2.0",
+		"make-async-function": "^1.0.0",
+		"make-generator-function": "^2.0.0",
 		"nyc": "^10.3.2",
 		"object-keys": "^1.1.1",
 		"tape": "^5.0.1"
