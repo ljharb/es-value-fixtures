@@ -39,6 +39,7 @@ test('es-value-fixtures', function (t) {
 		'int32s',
 		'integerNumbers',
 		'nonArrays',
+		'bigints',
 		'nonBigInts',
 		'nonBooleans',
 		'nonFunctions',
