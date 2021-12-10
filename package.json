@@ -4,12 +4,7 @@
 	"description": "Fixtures of ES values, for testing purposes",
 	"main": "index.js",
 	"exports": {
-		".": [
-			{
-				"default": "./index.js"
-			},
-			"./index.js"
-		],
+		".": "./index.js",
 		"./package.json": "./package.json"
 	},
 	"scripts": {
