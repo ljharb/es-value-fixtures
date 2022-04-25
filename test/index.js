@@ -83,7 +83,7 @@ test('es-value-fixtures', function (t) {
 		'descriptors'
 	];
 
-	t.deepEqual(ownKeys(values), expected, 'has expected fixture names');
+	t.deepEqual(ownKeys(values).sort(), expected.sort(), 'has expected fixture names');
 
 	forEach(expected, function (key) {
 		testItem(t, key, values[key]);
