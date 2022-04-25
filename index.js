@@ -7,6 +7,7 @@ var hasBigInts = require('has-bigints')();
 var arrowFunctions = require('make-arrow-function').list();
 var generatorFunctions = require('make-generator-function')();
 var asyncFunctions = require('make-async-function').list();
+var IntlFallbackSymbol = require('intl-fallback-symbol');
 
 var coercibleObject = { valueOf: function () { return 3; }, toString: function () { return 42; } };
 var coercibleFnObject = {
@@ -44,7 +45,8 @@ var wellKnownSymbols = hasSymbols ? [].concat(
 	Symbol.species || [],
 	Symbol.split || [],
 	Symbol.toPrimitive || [],
-	Symbol.unscopables || []
+	Symbol.unscopables || [],
+	IntlFallbackSymbol || []
 ) : [];
 var bigints = hasBigInts ? [BigInt(42), BigInt(0)] : [];
 var nonSymbolPrimitives = [].concat(nullPrimitives, booleans, strings, numbers, bigints);

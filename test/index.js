@@ -9,6 +9,7 @@ var isArray = require('isarray');
 var hasSymbols = require('has-symbols')();
 var flatMap = require('array.prototype.flatmap');
 var description = require('symbol.prototype.description');
+var IntlFallbackSymbol = require('intl-fallback-symbol');
 
 function testItem(t, key, item) {
 	t.ok(item || item === false, key + ' is truthy or literal `false`');
@@ -96,7 +97,12 @@ test('well-known symbols', { skip: !hasSymbols }, function (t) {
 	var comparator = function (a, b) {
 		return description(a).localeCompare(description(b));
 	};
-	var actual = flatMap(ownKeys(Symbol), function (k) { return typeof Symbol[k] === 'symbol' ? Symbol[k] : []; });
+
+	var actual = flatMap(
+		ownKeys(Symbol),
+		function (k) { return typeof Symbol[k] === 'symbol' ? Symbol[k] : []; }
+	).concat(IntlFallbackSymbol || []);
+
 	t.deepEqual(
 		values.wellKnownSymbols.sort(comparator),
 		actual.sort(comparator),
