@@ -55,8 +55,8 @@
 		"tape": "^5.5.3"
 	},
 	"dependencies": {
-		"has-bigints": "^1.0.1",
-		"has-symbols": "^1.0.2",
+		"has-bigints": "^1.0.2",
+		"has-symbols": "^1.0.3",
 		"make-arrow-function": "^1.2.0",
 		"make-async-function": "^1.0.0",
 		"make-generator-function": "^2.0.0",
