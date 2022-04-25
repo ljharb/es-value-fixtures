@@ -31,6 +31,21 @@ var numbers = zeroes.concat([42], infinities, nonIntegerNumbers);
 var strings = ['', 'foo', 'a\uD83D\uDCA9c'];
 var booleans = [true, false];
 var symbols = hasSymbols ? [Symbol.iterator, Symbol('foo')] : [];
+var wellKnownSymbols = hasSymbols ? [].concat(
+	Symbol.iterator || [],
+	Symbol.toStringTag || [],
+	Symbol.hasInstance || [],
+	Symbol.isConcatSpreadable || [],
+	Symbol.asyncIterator || [],
+	Symbol.match || [],
+	Symbol.matchAll || [],
+	Symbol.replace || [],
+	Symbol.search || [],
+	Symbol.species || [],
+	Symbol.split || [],
+	Symbol.toPrimitive || [],
+	Symbol.unscopables || []
+) : [];
 var bigints = hasBigInts ? [BigInt(42), BigInt(0)] : [];
 var nonSymbolPrimitives = [].concat(nullPrimitives, booleans, strings, numbers, bigints);
 var nonNumberPrimitives = [].concat(nullPrimitives, booleans, strings, symbols);
@@ -106,6 +121,7 @@ module.exports = {
 	propertyKeys: propertyKeys,
 	strings: strings,
 	symbols: symbols,
+	wellKnownSymbols: wellKnownSymbols,
 	timestamps: timestamps,
 	toStringOnlyObject: toStringOnlyObject,
 	truthies: truthies,
