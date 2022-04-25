@@ -43,16 +43,16 @@
 	},
 	"homepage": "https://github.com/ljharb/es-value-fixtures#readme",
 	"devDependencies": {
-		"@ljharb/eslint-config": "^20.0.0",
-		"aud": "^1.1.5",
-		"auto-changelog": "^2.3.0",
-		"eslint": "^8.4.1",
+		"@ljharb/eslint-config": "^21.0.0",
+		"aud": "^2.0.0",
+		"auto-changelog": "^2.4.0",
+		"eslint": "=8.8.0",
 		"foreach": "^2.0.5",
 		"isarray": "^2.0.5",
 		"nyc": "^10.3.2",
 		"object-keys": "^1.1.1",
 		"safe-publish-latest": "^2.0.0",
-		"tape": "^5.3.2"
+		"tape": "^5.5.3"
 	},
 	"dependencies": {
 		"has-bigints": "^1.0.1",
