@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.3.0](https://github.com/ljharb/es-value-fixtures/compare/v1.2.1...v1.3.0) - 2022-04-24
+
+### Commits
+
+- [actions] reuse common workflows [`daa6f95`](https://github.com/ljharb/es-value-fixtures/commit/daa6f95db55e20074a15133080236f15c415f23b)
+- [actions] use `node/install` instead of `node/run`; use `codecov` action [`82c5018`](https://github.com/ljharb/es-value-fixtures/commit/82c5018cb0d4b2caf01fed37b29a69c43ea6b0ad)
+- [New] add `wellKnownSymbols` [`09be804`](https://github.com/ljharb/es-value-fixtures/commit/09be804c27a7a20493b472407cdaaf0d363b76c3)
+- [actions] update codecov uploader [`36d3723`](https://github.com/ljharb/es-value-fixtures/commit/36d3723e5ffa71bf0cf9612bf2cec31a5d9ef36d)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`012e579`](https://github.com/ljharb/es-value-fixtures/commit/012e57954f9998596f5edd72def66288b5c6fa6f)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`c962990`](https://github.com/ljharb/es-value-fixtures/commit/c962990f6a43b4de55829248c00dc8bad40c377c)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `safe-publish-latest`, `tape` [`750a189`](https://github.com/ljharb/es-value-fixtures/commit/750a189c98b1ca80bcb14bc9f50f5ede5c08cd70)
+- [meta] simplify "exports" [`3351b98`](https://github.com/ljharb/es-value-fixtures/commit/3351b9896bfbb08f2618a4cd64fcab2760e8bdc2)
+- [Deps] update `has-bigints`, `has-symbols` [`a2c65f4`](https://github.com/ljharb/es-value-fixtures/commit/a2c65f45bdf8f36f2af51ed04fcea7040cfe82e7)
+- [Dev Deps] update `eslint`, `tape` [`4502b8f`](https://github.com/ljharb/es-value-fixtures/commit/4502b8f87208bd0507da65992d4ceeab2bb14215)
+- [meta] use `prepublishOnly` script for npm 7+ [`4fd486b`](https://github.com/ljharb/es-value-fixtures/commit/4fd486b7111548be51e4f779cbbfd105c3f96981)
+- [Tests] sort fixture names before comparing [`4ef2d6b`](https://github.com/ljharb/es-value-fixtures/commit/4ef2d6b1a61676e4ea9e5e2b0b62358cb7d53adf)
+- [Dev Deps] update `@ljharb/eslint-config` [`4c0e3bc`](https://github.com/ljharb/es-value-fixtures/commit/4c0e3bcebc2128c2b56c0bdb28dfc3b6a7413298)
+- [Deps] update `has-symbols` [`a73b6cf`](https://github.com/ljharb/es-value-fixtures/commit/a73b6cf74497ee1a36e259d8431635af372a525b)
+- [Tests] fix omission from 8b85bae [`e71399c`](https://github.com/ljharb/es-value-fixtures/commit/e71399c77e28d609117a675f3a4d36e414bca7fa)
+
 ## [v1.2.1](https://github.com/ljharb/es-value-fixtures/compare/v1.2.0...v1.2.1) - 2021-02-14
 
 ### Commits
