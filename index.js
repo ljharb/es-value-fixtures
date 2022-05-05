@@ -156,7 +156,7 @@ module.exports = {
 		return descriptors.configurable(descriptors.nonEnumerable());
 	},
 	assignedDescriptor: function (value) {
-		return descriptors.configurable(descriptors.enumerable(descriptors.writable({ value: value })));
+		return descriptors.configurable(descriptors.enumerable(descriptors.writable({ '[[Value]]': value })));
 	},
 	descriptors: descriptors
 };
