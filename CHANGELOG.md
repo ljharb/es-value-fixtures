@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.0](https://github.com/ljharb/es-value-fixtures/compare/v1.3.1...v1.4.0) - 2022-05-05
+
+### Commits
+
+- [meta] use `npmignore` to autogenerate an npmignore file [`e1e0e8f`](https://github.com/ljharb/es-value-fixtures/commit/e1e0e8fbd1188d634bbdceffa8c6be567a77ca58)
+- [New] add `v.assignedDescriptor(value)` [`b9c4b68`](https://github.com/ljharb/es-value-fixtures/commit/b9c4b6810059151acc443a0cddb09bf20466e7d1)
+
 ## [v1.3.1](https://github.com/ljharb/es-value-fixtures/compare/v1.3.0...v1.3.1) - 2022-04-25
 
 ### Commits
