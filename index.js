@@ -155,5 +155,8 @@ module.exports = {
 	genericDescriptor: function () {
 		return descriptors.configurable(descriptors.nonEnumerable());
 	},
+	assignedDescriptor: function (value) {
+		return descriptors.configurable(descriptors.enumerable(descriptors.writable({ value: value })));
+	},
 	descriptors: descriptors
 };

@@ -81,6 +81,7 @@ test('es-value-fixtures', function (t) {
 		'mutatorDescriptor',
 		'dataDescriptor',
 		'genericDescriptor',
+		'assignedDescriptor',
 		'descriptors'
 	];
 
