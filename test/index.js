@@ -102,7 +102,13 @@ test('well-known symbols', { skip: !hasSymbols }, function (t) {
 	var actual = flatMap(
 		ownKeys(Symbol),
 		function (k) { return typeof Symbol[k] === 'symbol' ? Symbol[k] : []; }
-	).concat(IntlFallbackSymbol || []);
+	);
+
+	t.equal(
+		values.wellKnownSymbols.indexOf(IntlFallbackSymbol),
+		-1,
+		'IntlFallbackSymbol is not a well-known symbol'
+	);
 
 	t.deepEqual(
 		values.wellKnownSymbols.sort(comparator),

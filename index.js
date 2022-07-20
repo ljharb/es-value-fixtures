@@ -31,7 +31,11 @@ var infinities = [Infinity, -Infinity];
 var numbers = zeroes.concat([42], infinities, nonIntegerNumbers);
 var strings = ['', 'foo', 'a\uD83D\uDCA9c'];
 var booleans = [true, false];
-var symbols = hasSymbols ? [Symbol.iterator, Symbol('foo')] : [];
+var symbols = hasSymbols ? [].concat(
+	Symbol.iterator,
+	Symbol('foo'),
+	IntlFallbackSymbol || []
+) : [];
 var wellKnownSymbols = hasSymbols ? [].concat(
 	Symbol.iterator || [],
 	Symbol.toStringTag || [],
@@ -45,8 +49,7 @@ var wellKnownSymbols = hasSymbols ? [].concat(
 	Symbol.species || [],
 	Symbol.split || [],
 	Symbol.toPrimitive || [],
-	Symbol.unscopables || [],
-	IntlFallbackSymbol || []
+	Symbol.unscopables || []
 ) : [];
 var bigints = hasBigInts ? [BigInt(42), BigInt(0)] : [];
 var nonSymbolPrimitives = [].concat(nullPrimitives, booleans, strings, numbers, bigints);
