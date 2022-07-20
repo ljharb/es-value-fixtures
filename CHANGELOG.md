@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.4.2](https://github.com/ljharb/es-value-fixtures/compare/v1.4.1...v1.4.2) - 2022-07-20
+
+### Commits
+
+- [Fix] `IntlFallbackSymbol` is not a well-known symbol, reconfirmed per 2022.07.20 TC39 [`4b828eb`](https://github.com/ljharb/es-value-fixtures/commit/4b828ebcdf8e12af6cf7facae87649fd226db975)
+- [Dev Deps] update `foreach` [`c3feace`](https://github.com/ljharb/es-value-fixtures/commit/c3feace821ea167b9333c6f4b8bcefbf207e28cf)
+
 ## [v1.4.1](https://github.com/ljharb/es-value-fixtures/compare/v1.4.0...v1.4.1) - 2022-05-05
 
 ### Commits
