@@ -101,7 +101,7 @@ test('well-known symbols', { skip: !hasSymbols }, function (t) {
 
 	var actual = flatMap(
 		ownKeys(Symbol),
-		function (k) { return typeof Symbol[k] === 'symbol' ? Symbol[k] : []; }
+		function (k) { return typeof Symbol[k] === 'symbol' && !Symbol.keyFor(Symbol[k]) ? Symbol[k] : []; }
 	);
 
 	t.equal(
