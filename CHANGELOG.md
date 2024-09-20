@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.5.0](https://github.com/ljharb/es-value-fixtures/compare/v1.4.2...v1.5.0) - 2024-09-19
+
+### Commits
+
+- [New] add types [`42ef99a`](https://github.com/ljharb/es-value-fixtures/commit/42ef99ad32e52c075abcc963b5d07784594df373)
+- [Dev Deps] update `@ljharb/eslint-config`, `array.prototype.flatmap`, `aud`, `npmignore`, `reflect.ownkeys`, `tape` [`8b764f9`](https://github.com/ljharb/es-value-fixtures/commit/8b764f9feed0773cede9245f62eafc068eed879a)
+- [Tests] add another sanity check for `wellKnownSymbols` [`33ea678`](https://github.com/ljharb/es-value-fixtures/commit/33ea678fba26dd74b0f44b9db73ad3427c334725)
+- [actions] update checkout action [`4ae7ab4`](https://github.com/ljharb/es-value-fixtures/commit/4ae7ab4a03653bd2870482a78883f1fec0dc7a16)
+- [Dev Deps] update `@ljharb/eslint-config`, `auto-changelog`, `symbol.prototype.description`, `tape` [`1faef62`](https://github.com/ljharb/es-value-fixtures/commit/1faef62699673f251197205417b9b22e6bff036c)
+- [Fix] add some missing bigints to nonBooleans and truthies [`651811c`](https://github.com/ljharb/es-value-fixtures/commit/651811c3418b8da70789e4ac606ebaddc85456da)
+- [Dev Deps] update `aud`, `tape` [`c10e0bb`](https://github.com/ljharb/es-value-fixtures/commit/c10e0bb1bf9e8f2ed98b9697fb85a7869442abdb)
+- [Tests] replace `aud` with `npm audit` [`0713d42`](https://github.com/ljharb/es-value-fixtures/commit/0713d426f8e1b28ec3b1a2529e329dd19c0d09cc)
+- [meta] add missing `engines.node` [`b29d495`](https://github.com/ljharb/es-value-fixtures/commit/b29d4953bd86979cd2a120f2b6ddb98a9a5073cc)
+- [Deps] update `intl-fallback-symbol` [`85ac92b`](https://github.com/ljharb/es-value-fixtures/commit/85ac92b1bc62b25a8086cfdd7df8562d8beb26d7)
+- [Tests] filter out broken node WKS polyfills (global registry symbols) [`eedd691`](https://github.com/ljharb/es-value-fixtures/commit/eedd6915edda2f02c964f2281c6b88776eeaedf6)
+- [Deps] update `object.assign` [`e4dc5c9`](https://github.com/ljharb/es-value-fixtures/commit/e4dc5c9c0c2171ce620ffa87a98fffc66e25bc68)
+- [Dev Deps] add missing peer dep [`4958415`](https://github.com/ljharb/es-value-fixtures/commit/495841573e06a58b6d0ab00e383240bab27ce433)
+- [meta] add `sideEffects` flag [`e4d8fa7`](https://github.com/ljharb/es-value-fixtures/commit/e4d8fa7c2ed86d71ae9f15b5073791990a5ad363)
+
 ## [v1.4.2](https://github.com/ljharb/es-value-fixtures/compare/v1.4.1...v1.4.2) - 2022-07-20
 
 ### Commits
