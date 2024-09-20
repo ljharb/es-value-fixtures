@@ -1,5 +1,6 @@
 'use strict';
 
+/** @type {Record<string, unknown>} */
 var values = require('../');
 
 var test = require('tape');
@@ -13,6 +14,7 @@ var IntlFallbackSymbol = require('intl-fallback-symbol');
 var wellKnownSymbols = require('well-known-symbols');
 var GetIntrinsic = require('get-intrinsic');
 
+/** @type {(t: test.Test, key: string, item: unknown) => void} */
 function testItem(t, key, item) {
 	t.ok(item || item === false, key + ' is truthy or literal `false`');
 	if (isArray(item)) {
@@ -22,10 +24,10 @@ function testItem(t, key, item) {
 		if (key.slice(-'Object'.length) !== 'Object') {
 			t.equal(typeof item(), 'object', key + ' function returns an object');
 		}
-	} else if (typeof item === 'object') {
+	} else if (item && typeof item === 'object') {
 		t.ok(typeof item === 'object', key + ' is an object');
 		if (key.slice(-'Object'.length) !== 'Object') {
-			forEach(ownKeys(item), function (itemKey) {
+			forEach(ownKeys(item), /** @param {string} itemKey */ function (itemKey) {
 				testItem(t, key + '.' + itemKey, item[itemKey]);
 			});
 		}
@@ -89,7 +91,7 @@ test('es-value-fixtures', function (t) {
 
 	t.deepEqual(ownKeys(values).sort(), expected.sort(), 'has expected fixture names');
 
-	forEach(expected, function (key) {
+	forEach(expected, /** @param {string} key */ function (key) {
 		testItem(t, key, values[key]);
 	});
 
@@ -97,20 +99,24 @@ test('es-value-fixtures', function (t) {
 });
 
 test('well-known symbols', { skip: !hasSymbols }, function (t) {
-	var comparator = function (a, b) {
-		return description(a).localeCompare(description(b));
-	};
-
 	var actual = flatMap(
 		ownKeys(Symbol),
+		/** @param {keyof SymbolConstructor} k */
 		function (k) { return typeof Symbol[k] === 'symbol' && !Symbol.keyFor(Symbol[k]) ? Symbol[k] : []; }
 	);
 
-	t.equal(
-		values.wellKnownSymbols.indexOf(IntlFallbackSymbol),
-		-1,
-		'IntlFallbackSymbol is not a well-known symbol'
-	);
+	if (IntlFallbackSymbol) {
+		t.equal(
+			values.wellKnownSymbols.indexOf(IntlFallbackSymbol),
+			-1,
+			'IntlFallbackSymbol is not a well-known symbol'
+		);
+	}
+
+	/** @type {(a: symbol, b: symbol) => number} */
+	var comparator = function (a, b) {
+		return description(a).localeCompare(description(b));
+	};
 
 	t.deepEqual(
 		values.wellKnownSymbols.sort(comparator),
