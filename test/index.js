@@ -10,6 +10,8 @@ var hasSymbols = require('has-symbols')();
 var flatMap = require('array.prototype.flatmap');
 var description = require('symbol.prototype.description');
 var IntlFallbackSymbol = require('intl-fallback-symbol');
+var wellKnownSymbols = require('well-known-symbols');
+var GetIntrinsic = require('get-intrinsic');
 
 function testItem(t, key, item) {
 	t.ok(item || item === false, key + ' is truthy or literal `false`');
@@ -115,6 +117,9 @@ test('well-known symbols', { skip: !hasSymbols }, function (t) {
 		actual.sort(comparator),
 		'well-known symbols are accounted for'
 	);
+
+	var actualWKS = wellKnownSymbols.map(function (x) { return GetIntrinsic('%' + x + '%', true); }).filter(Boolean);
+	t.equal(values.wellKnownSymbols.length, actualWKS.length, 'es-value-fixtures and well-known-symbols agree');
 
 	t.end();
 });

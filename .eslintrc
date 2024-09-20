@@ -17,6 +17,7 @@
 			"rules": {
 				"func-style": 0,
 				"max-lines-per-function": 0,
+				"new-cap": 0,
 			},
 		},
 	],
