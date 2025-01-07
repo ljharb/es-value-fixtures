@@ -53,7 +53,9 @@ var wellKnownSymbols = hasSymbols ? [].concat(
 	Symbol.species || [],
 	Symbol.split || [],
 	Symbol.toPrimitive || [],
-	Symbol.unscopables || []
+	Symbol.unscopables || [],
+	Symbol.dispose || [],
+	Symbol.asyncDispose || []
 ) : [];
 var bigints = hasBigInts ? [BigInt(42), BigInt(0)] : [];
 /** @type {(null | undefined | boolean | string | number | bigint)[]} */

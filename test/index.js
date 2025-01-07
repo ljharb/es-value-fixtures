@@ -14,6 +14,12 @@ var IntlFallbackSymbol = require('intl-fallback-symbol');
 var wellKnownSymbols = require('well-known-symbols');
 var GetIntrinsic = require('get-intrinsic');
 
+var isBrokenNodePolyfill = hasSymbols
+	&& Symbol.dispose
+	&& Symbol.keyFor(Symbol.dispose)
+	&& Symbol.asyncDispose
+	&& Symbol.keyFor(Symbol.asyncDispose);
+
 /** @type {(t: test.Test, key: string, item: unknown) => void} */
 function testItem(t, key, item) {
 	t.ok(item || item === false, key + ' is truthy or literal `false`');
@@ -102,7 +108,18 @@ test('well-known symbols', { skip: !hasSymbols }, function (t) {
 	var actual = flatMap(
 		ownKeys(Symbol),
 		/** @param {keyof SymbolConstructor} k */
-		function (k) { return typeof Symbol[k] === 'symbol' && !Symbol.keyFor(Symbol[k]) ? Symbol[k] : []; }
+		function (k) {
+			if (typeof Symbol[k] !== 'symbol') {
+				return [];
+			}
+			if (isBrokenNodePolyfill && (k === 'dispose' || k === 'asyncDispose')) {
+				return Symbol[k];
+			}
+			if (Symbol.keyFor(Symbol[k])) {
+				return [];
+			}
+			return Symbol[k];
+		}
 	);
 
 	if (IntlFallbackSymbol) {

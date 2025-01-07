@@ -76,7 +76,7 @@
 		"symbol.prototype.description": "^1.0.7",
 		"tape": "^5.9.0",
 		"typescript": "next",
-		"well-known-symbols": "^4.0.0"
+		"well-known-symbols": "^4.1.0"
 	},
 	"dependencies": {
 		"has-bigints": "^1.1.0",
