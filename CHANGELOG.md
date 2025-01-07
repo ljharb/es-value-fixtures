@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.6.0](https://github.com/ljharb/es-value-fixtures/compare/v1.5.0...v1.6.0) - 2025-01-06
+
+### Commits
+
+- [Fix] add `Symbol.dispose` and `Symbol.asyncDispose` [`9e4be33`](https://github.com/ljharb/es-value-fixtures/commit/9e4be330ce785778f8eedafe0cb19d2bdc588c11)
+- [New] add `registeredSymbols` and `unregisteredSymbols` [`d5c3ba2`](https://github.com/ljharb/es-value-fixtures/commit/d5c3ba284f5d93f79c17b435c9e88155318957b8)
+- [Dev Deps] update `@arethetypeswrong/cli`, `@ljharb/tsconfig`, `@types/isarray`, `@types/reflect.ownkeys`, `@types/tape`, `array.prototype.flatmap`, `get-intrinsic`, `reflect.ownkeys`, `symbol.prototype.description` [`db35788`](https://github.com/ljharb/es-value-fixtures/commit/db3578884696b744937b65d61a7704968082da96)
+- [Deps] update `has-bigints`, `has-symbols`, `intl-fallback-symbol`, `object.assign` [`3c24c8a`](https://github.com/ljharb/es-value-fixtures/commit/3c24c8a53a8d24e37fd0c17cddd200ef3660fe65)
+- [types] ignore incorrect attw error [`a37fd24`](https://github.com/ljharb/es-value-fixtures/commit/a37fd240a0ca874c469b419db00c5f6cc000108c)
+
 ## [v1.5.0](https://github.com/ljharb/es-value-fixtures/compare/v1.4.2...v1.5.0) - 2024-09-19
 
 ### Commits
