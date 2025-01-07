@@ -77,6 +77,8 @@ test('es-value-fixtures', function (t) {
 		'propertyKeys',
 		'strings',
 		'symbols',
+		'registeredSymbols',
+		'unregisteredSymbols',
 		'wellKnownSymbols',
 		'timestamps',
 		'toStringOnlyObject',

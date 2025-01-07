@@ -31,11 +31,25 @@ var infinities = [Infinity, -Infinity];
 var numbers = zeroes.concat([42], infinities, nonIntegerNumbers);
 var strings = ['', 'foo', 'a\uD83D\uDCA9c'];
 var booleans = [true, false];
+var $symbolFor = hasSymbols && Symbol['for']; // eslint-disable-line no-restricted-properties
+/** @type {symbol[]} */
+var unregisteredSymbols = hasSymbols ? [].concat(
+	// @ts-expect-error TS sucks with concat
+	Symbol(), // eslint-disable-line symbol-description
+	Symbol('foo')
+) : [];
+/** @type {symbol[]} */
+var registeredSymbols = hasSymbols && $symbolFor ? [].concat(
+	// @ts-expect-error TS sucks with concat
+	$symbolFor(),
+	$symbolFor('registered!')
+) : [];
 /** @type {symbol[]} */
 var symbols = hasSymbols ? [].concat(
 	// @ts-expect-error TS sucks with concat
 	Symbol.iterator,
-	Symbol('foo'),
+	unregisteredSymbols,
+	registeredSymbols,
 	IntlFallbackSymbol || []
 ) : [];
 /** @type {symbol[]} */
@@ -177,6 +191,8 @@ module.exports = {
 	strings: strings,
 	symbols: symbols,
 	wellKnownSymbols: wellKnownSymbols,
+	registeredSymbols: registeredSymbols,
+	unregisteredSymbols: unregisteredSymbols,
 	timestamps: timestamps,
 	toStringOnlyObject: toStringOnlyObject,
 	truthies: truthies,
