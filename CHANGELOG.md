@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.7.0](https://github.com/ljharb/es-value-fixtures/compare/v1.6.0...v1.7.0) - 2025-01-13
+
+### Commits
+
+- [New] add `v.descriptors.{getter,setter,value}` and use them [`59ff0c4`](https://github.com/ljharb/es-value-fixtures/commit/59ff0c44179f62611fc35ddf498123d2e11f9d75)
+- [Dev Deps] update `@arethetypeswrong/cli` [`10753a5`](https://github.com/ljharb/es-value-fixtures/commit/10753a577d34870d3ed4fdf644615de40fbf4997)
+
 ## [v1.6.0](https://github.com/ljharb/es-value-fixtures/compare/v1.5.0...v1.6.0) - 2025-01-06
 
 ### Commits
