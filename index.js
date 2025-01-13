@@ -129,29 +129,38 @@ var notNonNegativeIntegers = nonNumbers.concat(nonIntegerNumbers, NaN, infinitie
 
 /** @type {import('.')['descriptors']} */
 var descriptors = {
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	configurable: function (descriptor) {
-		return assign({}, descriptor, { '[[Configurable]]': true });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Configurable]]': /** @type {true} */ (true) });
 	},
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	nonConfigurable: function (descriptor) {
-		return assign({}, descriptor, { '[[Configurable]]': false });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Configurable]]': /** @type {false} */ (false) });
 	},
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	enumerable: function (descriptor) {
-		return assign({}, descriptor, { '[[Enumerable]]': true });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Enumerable]]': /** @type {true} */ (true) });
 	},
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	nonEnumerable: function (descriptor) {
-		return assign({}, descriptor, { '[[Enumerable]]': false });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Enumerable]]': /** @type {false} */ (false) });
 	},
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	writable: function (descriptor) {
-		return assign({}, descriptor, { '[[Writable]]': true });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Writable]]': /** @type {true} */ (true) });
 	},
-	// @ts-expect-error FIXME: figure out how to infer this properly
 	nonWritable: function (descriptor) {
-		return assign({}, descriptor, { '[[Writable]]': false });
+		// eslint-disable-next-line no-extra-parens
+		return assign({}, descriptor, { '[[Writable]]': /** @type {false} */ (false) });
+	},
+	getter: function (value) {
+		return { '[[Get]]': function get() { return value; } };
+	},
+	setter: function () {
+		return { '[[Set]]': function () {} };
+	},
+	value: function (value) {
+		return { '[[Value]]': value };
 	}
 };
 
@@ -201,35 +210,25 @@ module.exports = {
 	valueOfOnlyObject: valueOfOnlyObject,
 	zeroes: zeroes,
 	bothDescriptor: function () {
-		return { '[[Get]]': function () {}, '[[Value]]': true };
+		return assign({}, descriptors.getter(), descriptors.value(true));
 	},
 	bothDescriptorWritable: function () {
-		// @ts-expect-error FIXME: figure out how to infer this properly
-		return descriptors.writable({ '[[Get]]': function () {} });
+		return descriptors.writable(descriptors.getter());
 	},
-	/** @type {(value: unknown) => object} */
 	accessorDescriptor: function (value) {
-		return descriptors.enumerable(descriptors.configurable({
-			'[[Get]]': function get() { return value; }
-		}));
+		return descriptors.enumerable(descriptors.configurable(descriptors.getter(value)));
 	},
 	mutatorDescriptor: function () {
-		return descriptors.enumerable(descriptors.configurable({
-			'[[Set]]': function () {}
-		}));
+		return descriptors.enumerable(descriptors.configurable(descriptors.setter()));
 	},
-	/** @type {(value: unknown) => object} */
 	dataDescriptor: function (value) {
-		return descriptors.nonWritable({
-			'[[Value]]': arguments.length > 0 ? value : 42
-		});
+		return descriptors.nonWritable(descriptors.value(arguments.length > 0 ? value : 42));
 	},
 	genericDescriptor: function () {
 		return descriptors.configurable(descriptors.nonEnumerable());
 	},
-	/** @type {(value: unknown) => object} */
 	assignedDescriptor: function (value) {
-		return descriptors.configurable(descriptors.enumerable(descriptors.writable({ '[[Value]]': value })));
+		return descriptors.configurable(descriptors.enumerable(descriptors.writable(descriptors.value(value))));
 	},
 	descriptors: descriptors
 };

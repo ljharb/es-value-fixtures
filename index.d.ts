@@ -72,6 +72,9 @@ declare const values: {
         nonEnumerable<T extends object>(descriptor?: T): T & { '[[Enumerable]]': false };
         writable<T extends object>(descriptor?: T): T & { '[[Writable]]': true };
         nonWritable<T extends object>(descriptor?: T): T & { '[[Writable]]': false };
+		getter<T>(value?: T): { '[[Get]]'(): T | undefined };
+		setter(): { '[[Set]]'(v: unknown): void };
+		value<T>(value: T): { '[[Value]]': T };
     };
 };
 
