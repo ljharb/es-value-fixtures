@@ -47,7 +47,7 @@
 	},
 	"homepage": "https://github.com/ljharb/es-value-fixtures#readme",
 	"devDependencies": {
-		"@arethetypeswrong/cli": "^0.17.2",
+		"@arethetypeswrong/cli": "^0.17.3",
 		"@ljharb/eslint-config": "^21.1.1",
 		"@ljharb/tsconfig": "^0.2.3",
 		"@types/array.prototype.flatmap": "^1.2.6",
