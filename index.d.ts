@@ -39,6 +39,8 @@ declare const values: {
 	strings: string[];
 	symbols: symbol[];
 	wellKnownSymbols: symbol[];
+	registeredSymbols: symbol[];
+	unregisteredSymbols: symbol[];
 	timestamps: number[];
 	toStringOnlyObject: {
         valueOf(): object;
