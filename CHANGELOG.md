@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.7.1](https://github.com/ljharb/es-value-fixtures/compare/v1.7.0...v1.7.1) - 2025-01-23
+
+### Commits
+
+- [Dev Deps] update `@types/tape` [`dd4cca5`](https://github.com/ljharb/es-value-fixtures/commit/dd4cca53d0eeabb0ae9a1e50862a86dca7d5fe32)
+- [types] add missing types [`5a269ea`](https://github.com/ljharb/es-value-fixtures/commit/5a269ea98e3a2765dfb07f93a4424b0a1c9fccfc)
+
 ## [v1.7.0](https://github.com/ljharb/es-value-fixtures/compare/v1.6.0...v1.7.0) - 2025-01-13
 
 ### Commits
